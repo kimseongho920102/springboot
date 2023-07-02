@@ -2,6 +2,8 @@ package com.guro.service;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,11 +15,11 @@ public class BoardServiceImpl implements BoardService{
 
 	@Autowired
 	BoardMapper boardmapper;
-
+	private static final Logger logger = LoggerFactory.getLogger(BoardServiceImpl.class);
+	
 
 	@Override
 	public void boardReg(BoardVO vo) throws Exception {
-
 		boardmapper.boardReg(vo);
 	}
 

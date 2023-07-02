@@ -1,36 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper
-  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
-  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!DOCTYPE mapper  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.guro.mapper.BoardMapper">
-	<insert id="boardReg" parameterType="com.guro.model.BoardVO">
-		INSERT INTO BOARD
-		(Seq
-		,SUBJECT
-		,CONTENT
-		,REG_DATE
-		,COMPANY
-		,REG_NAME
-		,REG_PWD
-		,REG_FILE
-		,READ_COUNT
-		)
-		values(
-		tmp_seq.NEXTVAL
-		,#{subject}
-		,#{content}
-		,#{reg_date}
-		,#{company}
-		,#{reg_name}
-		,#{reg_pwd}
-			<if test="file_name != null and !file_name.equals('')">
-		,#{file_name}
-		</if>
-			<if test="file_name == null and file_name.equals('')">
-		,''
-		</if>
-		,0
-		)
+	<insert id="boardReg" parameterType="BoardVO">
+	INSERT INTO BOARD
+	 (Seq 
+	 ,SUBJECT 
+	 ,CONTENT 
+	 ,REG_DATE 
+	 ,COMPANY 
+	 ,REG_NAME
+	 ,REG_PWD 
+	 ,REG_FILE 
+	 ,READ_COUNT
+	) VALUES ( 
+	tmp_seq.NEXTVAL
+	,#{subject} 
+	,#{content}
+	,#{reg_date}
+	,#{company}
+	,#{reg_name}
+	,#{reg_pwd}
+	,'' 
+	,0 )
 	</insert>
 
 	<select id="boardList" resultType="com.guro.model.BoardVO">

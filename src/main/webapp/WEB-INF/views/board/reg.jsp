@@ -35,7 +35,7 @@
 				</div>
 
 				<div class="content_area">
-					<form id="reg_form" method="post" enctype="multipart/form-data">
+					<form id="reg_form" method="post" >
 						<div class="board_reg">
 							<table class="board_reg_table">
 
@@ -46,7 +46,8 @@
 											<option value="default">회사를 선택해주세요</option>
 											<option value="네이버">네이버</option>
 											<option value="카카오">카카오</option>
-											<option value="이피피에스">이피피에스</option>
+											<option value="라인">라인</option>
+											<option value="쿠팡">쿠팡</option>
 									</select></td>
 									<td>등록자</td>
 									<td><input type="text" id="reg_name" name="reg_name" /></td>

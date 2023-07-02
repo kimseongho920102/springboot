@@ -38,22 +38,7 @@ public class BoardController {
 	// 게시물 등록
 	@RequestMapping(value = "/reg", method = RequestMethod.POST)
 	public String regPOST(BoardVO vo) throws Exception {
-		// 인코딩 전 비밀번호
-//		String rawPw = "";
-		// 인코딩 후 비밀번호
-		String encodePw = "";
-
-//		rawPw = vo.getReg_pwd();
-//		encodePw = pwEncoder.encode(rawPw);
-		vo.setReg_pwd(encodePw);
-		if (vo.getReg_file() != null) {
-			logger.info("파일 이름: {}", vo.getReg_file().getOriginalFilename());
-			vo.setFile_name(vo.getReg_file().getOriginalFilename());
-			logger.info("파일 크기: {}", vo.getReg_file().getSize());
-		}
-
 		boardservice.boardReg(vo);
-
 		return "redirect:/";
 
 	}
@@ -86,11 +71,6 @@ public class BoardController {
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
 	public void updatePOST(HttpServletResponse response, BoardVO vo) throws Exception {
 		logger.info("업데이트 처리중..");
-		if (vo.getReg_file() != null) {
-			logger.info("파일 이름: {}", vo.getReg_file().getOriginalFilename());
-			vo.setFile_name(vo.getReg_file().getOriginalFilename());
-			logger.info("파일 크기: {}", vo.getReg_file().getSize());
-		}
 		boardservice.boardUpdate(vo);
 		logger.info("팝업창은 종료됨으로 이동될 주소는 없음");
 		response.setContentType("text/html; charset=UTF-8");
