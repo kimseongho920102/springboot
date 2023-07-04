@@ -33,6 +33,7 @@
 		<dependency>
 			<groupId>com.oracle.database.jdbc</groupId>
 			<artifactId>ojdbc8</artifactId>
+			<version>19.8.0.0</version>
 		</dependency>
 
 		<!-- MyBatis dependencies -->
@@ -76,6 +77,7 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
+			<version>1.18.16</version>
 			<scope>provided</scope>
 		</dependency>
 		<!-- security -->

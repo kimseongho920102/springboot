@@ -1,0 +1,51 @@
+@charset "UTF-8";
+*{
+	margin: 0;
+	padding: 0;
+}
+
+/* content 랩  */
+.wrap{
+	width : 100%;
+	margin: auto;
+}
+/* 홈페이지 기능 네비  */
+.top_area{
+	width : 100%;
+	height : 200px;
+	background-color: blue;	
+}
+/* 왼쪽 실제내용 오른쪽  */
+.center_area{
+	width: 100%;
+	height: 700px;
+}
+/* 화면 왼쪽 영역  */
+.left_area{
+	width: 15%;
+	height: 100%;
+	background-color: red;
+	float: left;
+}
+/* 실제 내용  */
+.content_area{
+	width: 70%;
+	height: 100%;
+	float: left;
+}
+/* 화면 오른쪽  */
+.right_area{
+	width: 15%;
+	height:100%;
+	display:inline-block;
+	background-color: yellow;
+}
+
+/* 회사 소개란  */
+.bottom_area{
+	width: 100%;
+	height: 200px;
+	background-color: blue;
+}
+
+
