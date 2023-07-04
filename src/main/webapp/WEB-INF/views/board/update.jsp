@@ -14,7 +14,7 @@
 </head>
 <body>
 	<div class="content_area">
-		<form id="update_form" method="post" enctype="multipart/form-data">
+		<form id="update_form" method="post">
 			<div class="board_update">
 				<table class="board_update_table">
 				
@@ -28,9 +28,6 @@
 									</c:when>
 									<c:when test="${vo.company eq '카카오'}">
 										<option value="카카오">카카오</option>
-									</c:when>
-									<c:when test="${vo.company eq '이피피에스'}">
-										<option value="이피피에스">이피피에스</option>
 									</c:when>
 									<c:otherwise>
 									<option value="default">회사를 선택해주세요</option>

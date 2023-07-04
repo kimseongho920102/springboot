@@ -14,6 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.guro.model.BoardVO;
 import com.guro.service.BoardService;
@@ -90,21 +91,20 @@ public class BoardController {
 
 	}
 
-//	// 비밀번호 확인하는 ajax
-//	@ResponseBody
-//	@RequestMapping(value = "/pwdCheck", method = RequestMethod.POST)
-//	public String pwdCheckPOST(String reg_pwd, int seq) throws Exception {
-//		logger.info("비밀번화 확인 ajax 요청 진행중");
-//
-//		String encodePw = boardservice.boardPwdCheck(seq);
-//
-//		if (pwEncoder.matches(reg_pwd, encodePw)) {
-//			return "success"; // 비밀번호 일치
-//		} else {
-//			return "fail"; // 비밀번호 불일치
-//		}
-//
-//	}
+	// 비밀번호 확인하는 ajax
+	@ResponseBody
+	@RequestMapping(value = "/pwdCheck", method = RequestMethod.POST)
+	public String pwdCheckPOST(String reg_pwd, int seq) throws Exception {
+		logger.info("비밀번화 확인 ajax 요청 진행중");
+		BoardVO vo = new BoardVO();
+		vo = boardservice.boardOneSearch(seq);
+		if (reg_pwd.equals(vo.getReg_pwd())) {
+			return "success"; // 비밀번호 일치
+		} else {
+			return "fail"; // 비밀번호 불일치
+		}
+
+	}
 
 	// 삭제 페이지로 이동
 	@RequestMapping(value = "delete", method = RequestMethod.GET)

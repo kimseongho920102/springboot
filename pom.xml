@@ -85,7 +85,13 @@
 			<artifactId>springfox-boot-starter</artifactId>
 			<version>3.0.0</version>
 		</dependency>
-
+		<!-- Spring Boot DevTools -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
 		<!-- security -->
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
 		<!-- <dependency> <groupId>org.springframework.security</groupId> <artifactId>spring-security-core</artifactId> 
